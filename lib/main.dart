@@ -1,3 +1,4 @@
+﻿import 'screens/welcome_phone_screen.dart';
 import 'package:flutter/material.dart';
 import 'widgets/custom_bottom_nav.dart';
 import 'widgets/back_button_widget.dart';
@@ -29,9 +30,12 @@ class MyApp
   Widget build(
     BuildContext context,
   ) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MainScreen(),
+      home: const WelcomePhoneScreen(),
+      routes: {
+        '/home': (_) => const MainScreen(),
+      },
     );
   }
 }
@@ -213,7 +217,7 @@ class _MainScreenState
             ],
           ),
 
-          // ⭐ FIXED TOP-RIGHT BUTTONS
+          // â­ FIXED TOP-RIGHT BUTTONS
           Positioned(
             top: 10,
             right: 20,
@@ -241,7 +245,7 @@ class _MainScreenState
             ),
           ),
 
-          // ⭐ PROGRESS BAR WIDGET
+          // â­ PROGRESS BAR WIDGET
           Positioned(
             top: 70,
             left: 20,
@@ -249,7 +253,7 @@ class _MainScreenState
             child: ProgressBarWidget(),
           ),
 
-          // ⭐ BUSINESS SEARCH WIDGET (NEW)
+          // â­ BUSINESS SEARCH WIDGET (NEW)
           Positioned(
             top: 180,
             left: 20,
@@ -310,3 +314,6 @@ class _MainScreenState
     );
   }
 }
+
+
+

@@ -4,9 +4,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 class LoadingAnimation
     extends
         StatelessWidget {
-  const LoadingAnimation({
-    super.key,
-  });
+  const LoadingAnimation({super.key});
 
   @override
   Widget build(
@@ -31,15 +29,33 @@ class LoadingAnimation
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Logo
-              Image.asset(
-                'assets/icons/adsmg.png',
-                width: 80,
-                height: 80,
-                fit: BoxFit.contain,
+              // Logo - Same as WelcomePhoneScreen
+              Container(
+                width: 72,
+                height: 72,
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  shape: BoxShape.circle,
+                ),
+                child: Center(
+                  child: Container(
+                    width: 44,
+                    height: 44,
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF2E6CFF),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    padding: const EdgeInsets.all(8),
+                    child: Image.asset(
+                      'assets/icons/adsmg.png',
+                      fit: BoxFit.contain,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
               ),
               const SizedBox(
-                height: 10,
+                height: 20,
               ),
               // SpinKit Three Bounce Animation
               const SpinKitThreeBounce(
